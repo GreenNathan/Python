@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{{ url_for( 'static' , filename='css/my_css.css' ) }}">
+</head>
+
+<body>
+
+    <input type="hidden" value="{{product}}">
+    <h1>Super neat</h1>
+    <h2>client {{session['user']}}</h2>
+    <h3>product{{session['product']}}</h3>
+    <form action="/accept_form" method="post">
+        <label>product</label>
+        <select>
+            <option value="soup"> soup</option>
+            <option value="rat"> rat</option>
+            <option value="beetman"> beetman</option>
+            <option value="rat soup"> rat soup</option>
+            <option value="can soup"> can soup</option>
+            <option value="batman"> batman</option>
+        </select>
+        <br>
+        <label>name on card</label>
+        <input name="unname" type="text">
+        <br>
+        <label>cardNumber</label>
+        <input name="numbercard" type="text">
+        <br>
+        <button>BUY!</button>
+    </form>
+
+    <script src="{{ url_for( 'static' , filename='js/my_script.js' ) }}"></script>
+</body>
+
+</html>
