@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show</title>
+    <style>
+        body {
+            margin: 10%;
+        }
+        .links {
+            display: flex;
+            justify-content: end;
+            margin: 5px;
+        }
+        .displayinfo {
+            border: 2px solid black;
+            padding: 20px;
+            height: 350px;
+            width: 50%;
+            /* margin-bottom: 10px; */
+        }
+        .seller {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="links">
+        <a href="/dashboard">TV Shows</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="displayinfo">
+        <p>Network: {{show.network}}</p>
+        <p>Release Date: {{show.release_date}}</p>
+        <p>Description: {{show.description}}</p>
+        <p class="blog">Posted By: {{show.user.first_name}}
+    </div>
+</body>
+
+</html>

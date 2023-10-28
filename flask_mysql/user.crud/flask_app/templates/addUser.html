@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+        }
+
+        .new_user {
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <div class="new_user">
+        <form action="/process" method="POST">
+            <h1>Add a New User</h1>
+            <h3>First Name:</h2>
+                <input type="text" name="first_name">
+                <h3>Last Name:</h3>
+                <input type="text" name="last_name">
+                <h3>Email:</h3>
+                <input type="text" name="email">
+                <br><br>
+                <button>Add</button>
+        </form>
+    </div>
+    <div>
+        <a href="/allUsers">
+            <h2>Home</h3>
+        </a>
+    </div>
+</body>
+
+</html>

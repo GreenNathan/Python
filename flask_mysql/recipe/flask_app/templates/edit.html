@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <style>
+        .buttons {
+            display: flex;
+            justify-content: end;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit {{car.id}}</h1>
+    <div class="buttons">
+        <a href="/loggedin"><button>Dashboard</button></a>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+
+    <form action="/update" method="POST">
+        <input type="hidden" name="id">
+        <h3>Price:</h3>
+        <input type="number" name='price'>
+        <br>
+        <h3>Model:</h3>
+        <input type="text" name="model">
+        <br>
+        <h3>Make:</h3>
+        <input type="text" name="make">
+        <br>
+        <h3>Year:</h3>
+        <input type="number" name="year">
+        <br>
+        <h3>Description:</h3>
+        <textarea type="text" name="description"></textarea>
+        <br><br>
+        
+        <input type="submit" value="update">
+    </form>
+
+</body>
+
+</html>

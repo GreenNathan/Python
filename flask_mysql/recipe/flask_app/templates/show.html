@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show</title>
+    <style>
+        body {
+            margin: 10%;
+        }
+        .buttons {
+            display: flex;
+            justify-content: end;
+            margin: 5px;
+        }
+        .displayinfo {
+            border: 2px solid black;
+            padding: 20px;
+            height: 350px;
+            width: 400px;
+            /* margin-bottom: 10px; */
+        }
+        .seller {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="buttons">
+        <a href="/loggedin"><button>Dashboard</button></a>
+        <a href="/logout"><button>Logout</button></a>
+    </div>
+    <div class="displayinfo">
+        <p>Price: {{car.price}}</p>
+        <p>Model: {{car.model}}</p>
+        <p>Make: {{car.make}}</p>
+        <p>Year: {{car.year}}</p>
+        <p>Description: {{car.description}}</p>
+        <p class="seller">Seller: {{car.user.first_name}}
+            <a href="/delete/{{car.id}}"><button>Purchase</button></a></p>
+    </div>
+</body>
+
+</html>

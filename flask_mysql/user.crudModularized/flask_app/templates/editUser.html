@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User{{user.id}}</h1>
+        <a href="/allUsers">
+            <h2>Home</h2>
+        </a>
+    </div>
+    <form action="/update" method="POST">
+        <input type="hidden" name="id" value="{{user.id}}" >
+        <h3>First Name:</h3>
+        <input type="text" name='first_name' value="{{user.first_name}}">
+        <br>
+        <h3>Last Name:</h3>
+        <input type="text" name="last_name" value="{{user.last_name}}">
+        <br>
+        <h3>Email:</h3>
+        <input type="text" name="email" value="{{user.email}}">
+        <br><br>
+        <a href="/allUsers"><button>Update</button></a> 
+        <a href="/displayUser/{{user.id}}">Show User</a>
+    </form>
+
+</body>
+
+</html>

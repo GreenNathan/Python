@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for sale</title>
+    <style>
+        .links {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .container {
+            width: 500px;
+            margin-left: 300px;
+        }
+    </style>
+</head>
+
+<!-- ADD VALIDATIONS -->
+
+<body>
+    <div class="links">
+        <h1>Add a New Show</h1>
+        <a href="/dashboard">TV Shows</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    {% for message in get_flashed_messages() %}
+    <p style="font-weight: bold; color: darkolivegreen;">{{message}}</p>
+    {% endfor %}
+
+    <form action="/createshow" method="POST" class="container">
+        <input type="hidden" name="users_id" value="{{session['user_id']}}">
+        <p>Title:<input type="text" name='title'></p>
+        <br>
+        <p>Network:<input type="text" name="network"></p>
+        <br>
+        <p>Release Date:<input type="date" name="release_date"></p>
+        <br>
+        <p>Description:<textarea type="text" name="description"></textarea></p>
+        <br><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+
+</html>

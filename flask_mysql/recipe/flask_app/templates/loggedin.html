@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard / log in</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: space-around;
+        }
+        .tables {
+            border: 2px solid black;
+        }
+
+        .logout {
+            background-color: aqua;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Welcome to Car Dealz, {{session.first_name}}!!!</h1>
+        <a href="/logout">
+            <button class="logout">Logout</button>
+        </a>
+    </div>
+    <h2>Cars for sale</h2>
+    <table class="tables">
+        <thead>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Seller</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for car in cars %}
+            <tr>
+                <td>{{car.model}}</td>
+                <td>{{car.year}}</td>
+                <td>{{car.user.first_name}}</td>
+                <td><a href="/show/{{car.id}}">View</a> | <a href="/edit/{{car.id}}">Edit</a> | <a href="/delete/{{car.id}}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br><br>
+    <a href="/forsale"><button>Add A Car</button></a>
+</body>
+
+</html>
