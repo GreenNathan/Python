@@ -1,0 +1,1 @@
+SELECT * FROM tvshows_db.users;

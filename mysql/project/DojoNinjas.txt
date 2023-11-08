@@ -1,0 +1,39 @@
+SELECT * FROM dojoninjas_db.dojos;
+INSERT INTO dojos (name) 
+VALUES('Jimmy');
+
+INSERT INTO dojos (name)
+VALUES('Timmy');
+ 
+INSERT INTO dojos (name) 
+VALUES('Tommy');
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+
+
+
+SELECT * FROM dojoninjas_db.ninjas;
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Kenny','Blue', 28, 8);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Emrie','Smith', 33, 8);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Willow','Spit', 41, 8);
+
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('John','Rambo', 43, 9);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Leroy','Jenkins', 64, 9);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Karen','Langer', 22, 9);
+
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Timmy','Tompson', 35, 10);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Jimmie','Johnson', 21, 10);
+INSERT INTO ninjas (first_name, Last_name, age, dojo_id) VALUES('Ava','Grace', 30, 10);
+
+SELECT * FROM dojoninjas_db.ninjas WHERE dojo_id = 8;
+SELECT * FROM dojoninjas_db.ninjas WHERE dojo_id = 10;
+
+SELECT dojo_id FROM dojoninjas_db.ninjas WHERE first_name = 'Ava';
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id
+WHERE ninjas.id = 6;
+
+SELECT * FROM ninjas
+JOIN dojos ON dojos.id = ninjas.dojo_id;
