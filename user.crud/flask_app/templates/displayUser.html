@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>display User</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .display_info {
+            border: 2px solid black;
+            padding: 20px;
+            width: 45%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>User{{user.id}}</h1> 
+        <a href="/allUsers">
+            <h2>Home</h2>
+        </a>
+    </div>
+
+    <div class="display_info">
+        <h3>Full name: {{user.first_name}} {{user.last_name}}</h3>
+        <h3>Email: {{user.email}}</h3>
+        <h3>Created on: {{user.created_at}}</h3>
+        <h3>Updated on: {{user.updated_at}}</h3>
+    </div>
+    <a href="/editUser/{{user.id}}">Edit</a> | <a href="/delete/{{user.id}}">Delete</a>
+
+</body>
+
+</html>
